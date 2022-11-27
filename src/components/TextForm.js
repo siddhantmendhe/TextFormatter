@@ -3,15 +3,29 @@ import React,{useState} from 'react'
 export default function TextForm(props) {
   //hooks
   const [text,setText]=useState('');
+  
   const handleUpClick=()=>{
-    let newText=text.toUpperCase()
-    setText(newText);
-    props.showAlert("Converted to uppercase","success");
+    if(text===''){
+    props.showAlert("Text is empty Text","danger");
+
+    }
+    else{
+      let newText=text.toUpperCase()
+      setText(newText);
+      props.showAlert("Converted to uppercase","success");
+    }
+   
   }
   const handleLowClick=()=>{
-    let newText=text.toLowerCase()
-    setText(newText);
-    props.showAlert("Converted to lowercase","success");
+    if(text===''){
+      props.showAlert("Text is empty Text","danger");
+  
+      }else{
+        let newText=text.toLowerCase()
+        setText(newText);
+        props.showAlert("Converted to lowercase","success");
+        
+      }
     
   }
   const handleOnChange=(e)=>{
@@ -20,9 +34,15 @@ export default function TextForm(props) {
   }
   //Copy function
   const handleCopy=()=>{
-    var text=document.getElementById("myBox");
+    if(text===''){
+      props.showAlert("Text is empty Text","danger");
+  
+      }
+      else{
+    let text=document.getElementById("myBox");
     navigator.clipboard.writeText(text.value);
     props.showAlert("Coppied to Clipbord","success");
+      }
 
   }
   //Clear Text
@@ -34,11 +54,19 @@ export default function TextForm(props) {
   }
   //RemoveExtraSpaces
   const RemoveExtraSpaces=()=>{
-    let newText=text.split(/[ ]+/);
-    setText(newText.join(" "));
-    props.showAlert("Removed Extra Spaces","success");
+    if(text===''){
+      props.showAlert("Text is empty Text","danger");
+  
+      }
+      else{
+        let newText=text.split(/[ ]+/);
+        setText(newText.join(" "));
+        props.showAlert("Removed Extra Spaces","success");
+      }
+    
 
   }
+
 
   // setText('New text');
   return (
@@ -59,9 +87,10 @@ export default function TextForm(props) {
 
     </div>
     <div className="container my-3">
+     
       <h1>Your text summary</h1>
-      <p>{text.split(" ").length} words and {text.length} characters</p>
-      <p>{0.008 * text.split(" ").length} Minutes read</p>
+      <p>{text!==''?text.split(" ").length:"0"} words and {text.length} characters</p>
+      <p>{text!==''?`${0.008 * text.split(" ").length}`:"0"} Minutes read</p>
       <h2>Preview</h2>
       <p>{text.length>0?text:"Enter something in the textBox above to preview it here"}</p>
     </div>

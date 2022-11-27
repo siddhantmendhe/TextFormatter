@@ -1,16 +1,16 @@
 
 import './App.css';
-import About from './components/About';
+// import About from './components/About';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import React,{useState} from 'react';
 import Alert from './components/Alert';
 
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route
-} from "react-router-dom";
+// import {
+//   BrowserRouter as Router,
+//   Routes,
+//   Route
+// } from "react-router-dom";
 //React router
 // In react-router-dom v6, "Switch" is replaced by routes "Routes". You need to update the import from
 
@@ -81,21 +81,22 @@ function App() {
   }
   return (
     <>
-    <Router>
+    {/* <Router> */}
     <Navbar title="Text Formatter" about="About us " mode={mode} btntext={btntext} toggleMode={toggleMode}/>
     <Alert alert={alert}/>
     <div className="container my-3">
   
-          <Routes>
-              <Route exact path="/about" element={<About/>}/>
-              <Route exact path="/" element={<TextForm heading="Enter the text to analyze" showAlert={showAlert} mode={mode}/>}/>
+          {/* <Routes> */}
+              {/* <Route exact path="/about" element={<About/>}/> */}
+              {/* <Route exact path="/" element={<TextForm heading="Enter the text to analyze" showAlert={showAlert} mode={mode}/>}/> */}
+              <TextForm heading="Enter the text to analyze" showAlert={showAlert} mode={mode}/>
               
               
-          </Routes>
+          {/* </Routes> */}
 
     
     </div>
-    </Router>
+    {/* // </Router> */}
    
     </>
   );
