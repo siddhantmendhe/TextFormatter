@@ -39,9 +39,9 @@ export default function TextForm(props) {
   
       }
       else{
-    let text=document.getElementById("myBox");
-    navigator.clipboard.writeText(text.value);
-    document.getSelection().removeAllRanges();
+    
+    navigator.clipboard.writeText(text);
+    
     props.showAlert("Coppied to Clipbord","success");
       }
 
