@@ -102,11 +102,11 @@ export default function TextForm(props) {
      
       <h3>Your text summary</h3>
 
-      <h1 class="display-6"><strong>{text.split(/[\s+.,:;]/).filter((element)=>{
+      <h1 className="display-6"><strong>{text.split(/[\s+.,:;]/).filter((element)=>{
         return (element.length!==0) && element!=='/[;:,.]/';
 
       }).length}</strong> words and <strong>{(text.replace(/\s+/g,"")).length}</strong> characters</h1>
-      <h1 class="display-6">
+      <h1 className="display-6">
       <strong>
         {0.008 * text.split(/[\s+.,:;]/).filter((element)=>{
         return (element.length!==0) && element!=='/[;:,.]/';
