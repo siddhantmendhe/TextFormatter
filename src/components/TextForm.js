@@ -6,7 +6,7 @@ export default function TextForm(props) {
   
   const handleUpClick=()=>{
     if(text===''){
-    props.showAlert("Text is empty Text","danger");
+    props.showAlert("Text is empty","danger");
 
     }
     else{
@@ -18,7 +18,7 @@ export default function TextForm(props) {
   }
   const handleLowClick=()=>{
     if(text===''){
-      props.showAlert("Text is empty Text","danger");
+      props.showAlert("Text is empty","danger");
   
       }else{
         let newText=text.toLowerCase()
@@ -35,7 +35,7 @@ export default function TextForm(props) {
   //Copy function
   const handleCopy=()=>{
     if(text===''){
-      props.showAlert("Text is empty Text","danger");
+      props.showAlert("Text is empty","danger");
   
       }
       else{
@@ -56,7 +56,7 @@ export default function TextForm(props) {
   //RemoveExtraSpaces
   const RemoveExtraSpaces=()=>{
     if(text===''){
-      props.showAlert("Text is empty Text","danger");
+      props.showAlert("Text is empty","danger");
   
       }
       else{
